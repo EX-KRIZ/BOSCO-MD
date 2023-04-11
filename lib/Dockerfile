@@ -1,6 +1,6 @@
 FROM quay.io/xelectra/xasena:latest
-RUN git clone https://github.com/X-Electra/X-Asena /root/X-Asena
-WORKDIR /root/X-Asena
+RUN git clone https://github.com/TOXIC-KRIZ/BOSCO-MD /root/BOSCO-MD
+WORKDIR /root/BOSCO-MD
 RUN yarn install --network-concurrency 1
 CMD ["node", "bot.js"] 
 
