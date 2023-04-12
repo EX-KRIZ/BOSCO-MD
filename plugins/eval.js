@@ -22,7 +22,7 @@ const {
   runtime,
   clockString,
   sleep,
-  command,
+  Bosco,
 } = require("../lib/");
 const util = require("util");
 const config = require("../config");
