@@ -1,4 +1,4 @@
-const { command ,isPrivate} = require("../lib/");
+const { Bosco,isPrivate} = require("../lib/");
 Bosco(
   {
     pattern: "ping",
