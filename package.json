@@ -39,6 +39,8 @@
       "mp3-cutter": "^1.0.6",
       "lowdb": "^2.1.0",
       "node-cron": "^3.0.0",
+      "node-id3": "^0.2.3",
+      "node-youtube-music": "^0.8.3",
       "node-fetch": "^2.6.1",
       "node-webpmux": "^3.1.0",
       "os": "^0.1.2",
@@ -69,6 +71,7 @@
       "aes256":"1.1.0",
       "express": "latest",
       "ytdl-core": "latest",
+      "youtubedl-core": "^4.11.2",
       "pastebin-js": "^1.0.6"      
    }
 }
