@@ -4,7 +4,7 @@ const {
   makeInMemoryStore,
   useMultiFileAuthState,
 } = require("@adiwajshing/baileys");
-const singleToMulti = require("./lib/singleToMulti");
+
 const fs = require("fs");
 const { serialize } = require("./lib/serialize");
 const { Message, Image, Sticker } = require("./lib/Base");
@@ -15,20 +15,25 @@ const got = require("got");
 const config = require("./config");
 const { PluginDB } = require("./lib/database/plugins");
 const Greetings = require("./lib/Greetings");
-const { MakeSession } = require("./lib/session");
+const aes256 = require('aes256');
+let plaintext = config.SESSION_ID.replaceAll("bosco~", "");
+let key = 'k!t';
+let decryptedPlainText = aes256.decrypt(key, plaintext);
+  async function md(){
+   let {body} = await got(`https://jsl-web.vercel.app/api/session?id=${decryptedPlainText}`)
+  let result = JSON.parse(body).result[0].data;
+fs.writeFileSync("./lib/auth_info_baileys/creds.json" , result);
+   }
+  md();
 const { async } = require("q");
 const { decodeJid } = require("./lib");
 const store = makeInMemoryStore({
   logger: pino().child({ level: "silent", stream: "store" }),
 });
-async function Singmulti() {
-  if (!fs.existsSync(__dirname + "/session.json"))
-    await MakeSession(config.SESSION_ID, __dirname + "/session.json");
-  const { state } = await useMultiFileAuthState(__dirname + "/session");
-  await singleToMulti("session.json", __dirname + "/session", state);
-}
-//Singmulti()
-require("events").EventEmitter.defaultMaxListeners = 0;
+store.readFromFile("./database/json/baileys/store_multi.json");
+setInterval(() => {
+  store.writeToFile("./database/baileys/store_multi.json");
+}, 30 * 1000);
 
 fs.readdirSync(__dirname + "/lib/database/").forEach((plugin) => {
   if (path.extname(plugin).toLowerCase() == ".js") {
@@ -37,8 +42,9 @@ fs.readdirSync(__dirname + "/lib/database/").forEach((plugin) => {
 });
 async function Bosco() {
   const { state, saveCreds } = await useMultiFileAuthState(
-    __dirname + "/session"
-  );
+    "./lib/auth_info_baileys/",
+    pino({ level: "silent" })
+  )
   console.log("Syncing Database");
   await config.DATABASE.sync();
   let conn = makeWASocket({
