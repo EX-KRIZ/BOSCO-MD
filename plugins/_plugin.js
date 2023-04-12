@@ -1,11 +1,11 @@
-const { command, getUrl } = require("../lib");
+const { Bosco, getUrl } = require("../lib");
 const got = require("got");
 const fs = require("fs");
 const { PluginDB, installPlugin } = require("../lib/database/plugins");
 
 
 
-command(
+Bosco(
   {
     pattern: "install",
     fromMe: true,
@@ -53,7 +53,7 @@ command(
 
 
 
-command(
+Bosco(
   { pattern: "plugin", fromMe: true, desc: "plugin list", type: "user" },
   async (message, match) => {
     var mesaj = "";
@@ -76,7 +76,7 @@ command(
 
 
 
-command(
+Bosco(
   {
     pattern: "remove(?: |$)(.*)",
     fromMe: true,
