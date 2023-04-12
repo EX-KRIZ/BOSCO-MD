@@ -6,7 +6,7 @@ const heroku = new Heroku({ token: Config.HEROKU_API_KEY });
 const baseURI = "/apps/" + Config.HEROKU_APP_NAME;
 
 
-command(
+Bosco(
   { pattern: "setsudo ?(.*)", 
     fromMe: true, 
     desc: "set sudo", 
@@ -27,7 +27,7 @@ command(
   }
 );
 
-command(
+Bosco(
   { pattern: "getsudo ?(.*)", 
     fromMe: true, 
     desc: "shows sudo", 
