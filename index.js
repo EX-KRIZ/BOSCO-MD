@@ -33,10 +33,6 @@ const { decodeJid } = require("./lib");
 const store = makeInMemoryStore({
   logger: pino().child({ level: "silent", stream: "store" }),
 });
-store.readFromFile("./database/json/baileys/store_multi.json");
-setInterval(() => {
-  store.writeToFile("./database/baileys/store_multi.json");
-}, 30 * 1000);
 
 fs.readdirSync(__dirname + "/lib/database/").forEach((plugin) => {
   if (path.extname(plugin).toLowerCase() == ".js") {
