@@ -1,4 +1,4 @@
-const { command } = require("../lib");
+const { Bosco } = require("../lib");
 const Config = require("../config");
 const { SUDO } = require("../config");
 const Heroku = require("heroku-client");
