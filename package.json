@@ -1,14 +1,14 @@
 {
-  "name": "x-asena",
+  "name": "BOSCO-MD",
   "version": "2.0.0",
-  "description": "WhatsAsena project - a Whatsapp userbot helping to improve your Whatsapp experience.",
+  "description": "Bosco-md project - a Whatsapp userbot helping to improve your Whatsapp experience.",
   "main": "./bot.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Neeraj-x0/x-asena.git"
+    "url": "git+https://github.com/TOXIC-KRIX/BOSCO-MD.git"
   },
   "keywords": [
     "whatsapp",
@@ -24,13 +24,13 @@
     "whatsapp api",
     "WhatsAsena"
   ],
-  "author": "X-Electra",
-  "developer": "X-Electra / Neeraj-x0",
+  "author": "chugiyan",
+  "developer": "chugiyan / pepesir",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/Neeraj-x0/x-asena/issues"
+    "url": "https://github.com/TOXIC-KRIZ/BOSCO-MD/issues"
   },
-  "homepage": "https://github.com/Neeraj-x0/x-asena#readme",
+  "homepage": "https://github.com/TOXIC-KRIZ/BOSCO-MD#readme",
   "dependencies": {
     "@adiwajshing/baileys": "^4.4.0",
     "@adiwajshing/keyed-db": "^0.2.4",
