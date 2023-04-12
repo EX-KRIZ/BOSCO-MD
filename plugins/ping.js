@@ -1,5 +1,5 @@
 const { command ,isPrivate} = require("../lib/");
-command(
+Bosco(
   {
     pattern: "ping",
     fromMe: isPrivate,
