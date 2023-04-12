@@ -58,7 +58,7 @@ async function Bosco() {
   });
   store.bind(conn.ev);
   setInterval(() => {
-    store.writeToFile("./database/store.json");
+    store.writeToFile("./lib/store.json");
   }, 30 * 1000);
 
   conn.ev.on("creds.update", saveCreds);
@@ -72,9 +72,8 @@ async function Bosco() {
   conn.ev.on("connection.update", async (s) => {
     const { connection, lastDisconnect } = s;
     if (connection === "connecting") {
-      console.log("BOSCO-MD");
-      console.log("ℹ️ Connecting to WhatsApp... Please Wait.");
-    }
+      console.log("BOSCO-MD 2.0.1");
+      }
     if (connection === "open") {
       console.log("✅ Login Successful!");
       console.log("⬇️ Installing External Plugins...");
