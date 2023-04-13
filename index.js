@@ -3,6 +3,7 @@ const {
   Browsers,
   makeInMemoryStore,
   useMultiFileAuthState,
+fetchLatestBaileysVersion,
 } = require("@adiwajshing/baileys");
 
 const fs = require("fs");
@@ -44,6 +45,7 @@ async function Bosco() {
     "./lib/auth_info_baileys/",
     pino({ level: "silent" })
   )
+let { version } = await fetchLatestBaileysVersion();
   console.log("Syncing Database");
   await config.DATABASE.sync();
   let conn = makeWASocket({
