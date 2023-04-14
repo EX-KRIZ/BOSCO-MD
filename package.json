@@ -32,6 +32,7 @@
       "fluent-ffmpeg": "^2.1.2",
       "fake-useragent": "^1.0.1",
       "fs": "0.0.1-security",
+      "instagram-url-direct": "^1.0.13",
       "g-i-s": "^2.1.6",
       "google-it": "^1.6.2",
       "got": "^11.8.3",
